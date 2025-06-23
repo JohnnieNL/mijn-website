@@ -1,5 +1,22 @@
-fetch("https://www.jouwdomein.nl/api.asp")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("output").innerHTML = data.html;
-  });
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Extern bericht</title>
+</head>
+<body>
+  <h1>Bericht van meijran.nl:</h1>
+  <div id="bericht">Laden...</div>
+
+  <script>
+    fetch('https://meijran.nl/github/bericht.asp')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('bericht').textContent = data.bericht;
+      })
+      .catch(error => {
+        document.getElementById('bericht').textContent = 'Fout bij ophalen gegevens.';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
