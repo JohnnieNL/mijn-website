@@ -1,0 +1,354 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --retro-bg: #f6f2e9;
+  --retro-accent: #d4a373;
+  --retro-text: #3f3f3f;
+  --retro-border: #b08968;
+  --retro-header: #77573E;
+  --retro-nav: #880000;
+  --retro-footer: #77573E;
+  --retro-aktief: #b08968;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* Let op: padding-top uitgezet ivm js */
+  padding-bottom: 80px;
+  background-color: var(--retro-bg);
+  color: var(--retro-text);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--retro-header);
+  color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  z-index: 1000;
+}
+
+.header-logo-left {
+  padding-left: 11px;
+  justify-self: start;
+}
+
+.header-logo-right {
+  padding-right: 11px;
+  justify-self: end;
+}
+
+.logo {
+  max-height: 40px;
+  height: auto;
+}
+
+.header-text {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Nav */
+nav {
+  background: #ddd6cc; 
+  padding: 10px 0;
+  border-bottom: 1px solid var(--retro-border);
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  z-index: 999;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+nav li {
+  width: 120px;
+  margin: 5px;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: var(--retro-accent);
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* de schaduw op de lattop */
+  color: #000;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #c29a6c;
+  color: white; /* <- voeg deze regel toe */
+}
+
+nav a.active {
+  background-color: var(--retro-aktief);
+  color: #fdf8f1;
+  font-weight: bold;
+}
+
+nav a.active:hover {
+  background-color: var(--retro-aktief);
+  color: #fdf8f1;
+  cursor: default;
+}
+
+.nav-current-page {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: var(--retro-header);
+  background-color: var(--retro-bg);
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 1.6em;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* Main */
+main {
+  max-width: 800px;
+  margin: auto;
+  /* padding-top wordt nu door JS ingesteld */
+}
+
+.retro-wrapper {
+  background-color: #fdf8f1;
+  border: 2px solid var(--retro-border);
+  margin: 0px 20px 20px 20px;
+  padding: 30px;
+  border-radius: 12px;
+  /*box-shadow: 0 4px 10px rgba(0,255,0,0.1);*/
+  font-family: 'Georgia', serif;
+}
+
+.retro-wrapper h1 {
+  font-size: 2em;
+  color: var(--retro-header);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.retro-wrapper h2 {
+  font-size: 1.4em;
+  color: var(--retro-accent);
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.retro-wrapper h3 {
+  font-size: 1.4em;
+  color: var(--retro-accent);
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.retro-wrapper .intro {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: var(--retro-text);
+}
+
+.retro-wrapper .intro2 {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 0px;
+  color: var(--retro-text);
+}
+
+.retro-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.retro-list > li > ul {
+  margin-top: 10px;
+}
+
+.retro-list li {
+  background-color: #fffaf4;
+  border-left: 5px solid var(--retro-accent);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  border-radius: 6px;
+}
+
+.retro-quote {
+  font-style: italic;
+  color: #5a4632;
+  background-color: #f8efe0;
+  border-left: 4px solid var(--retro-border);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.retro-button {
+  display: inline-block;
+  background-color: var(--retro-accent);
+  color: #000;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, color 0.3s;
+  font-family: Georgia, serif;
+  margin-top: 10px;
+}
+
+.retro-button:hover {
+  background-color: #c29a6c;
+  color: white;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: var(--retro-footer);
+  color: white;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 40px;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+  .header-text {
+    font-size: 2.4em;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    height: 50px;
+  }
+
+  .header-text {
+    font-size: 1em;
+  }
+
+
+  .header-logo-right .logo {
+    display: none;
+  }
+
+  .logo {
+    max-height: 30px;
+  }
+
+  nav {
+    top: 50px;
+    /*height: 50px;*/ /*hier */
+  }
+
+  nav a {
+    padding: 14px 20px;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* de schaduw van het hamburgermenu */
+  }
+
+  nav li {
+    padding: 0;
+    width: 90%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-menu { /* hamburger */
+    display: none;
+  }
+
+
+  .nav-current-page {
+    background-color: var(--retro-aktief); 
+    color: #fdf8f1;
+    width: 90%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  body.menu-open .nav-current-page {
+    display: none;
+  }
+
+  .hamburger { /* hamburger */
+    display: block;
+  }
+
+
+  .hamburger-icon {
+    max-height: 30px;
+    height: auto;
+    display: block;
+  }
+
+
+  #mobileMenu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--retro-bg);
+    position: absolute;
+    top: 0px;
+    left: 0;
+    padding: 5px 0;
+    width: 100%;
+    border-bottom: 2px solid #b08968;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  #mobileMenu.active {
+    display: flex;
+  }
+
+  #mobileMenu.active + #currentPageName {
+    display: none;
+  }
+
+  main {
+    /* padding-top wordt door JS aangepast */
+  }
+}
