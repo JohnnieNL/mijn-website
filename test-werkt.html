@@ -1,0 +1,5 @@
+fetch("https://www.jouwdomein.nl/api.asp")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("output").innerHTML = data.html;
+  });
