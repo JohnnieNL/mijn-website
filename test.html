@@ -8,7 +8,7 @@
   <div id="bericht">Laden...</div>
 
   <script>
-    fetch('https://meijran.nl/api/bericht.asp')
+    fetch('https://meijran.nl/github/bericht.asp')
       .then(response => response.json())
       .then(data => {
         document.getElementById('bericht').textContent = data.bericht;
