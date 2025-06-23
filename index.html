@@ -1,97 +1,18 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Woontrends Losser</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-  <link rel="stylesheet" href="style.css?v=<%= Now() %>" />
-
-
-  <script>
-     function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('active');
-        }
-  </script>
-
-<script>
-  document.addEventListener('click', function(e) {
-    const menu = document.getElementById('mobileMenu');
-    const hamburger = document.querySelector('.hamburger');
-    if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-      menu.classList.remove('active');
-    }
-  });
-</script>
-
-
-
+  <meta charset="UTF-8">
+  <title>Mijn Contactformulier</title>
+  <link rel="stylesheet" href="stijl.css">
 </head>
 <body>
-
-  <header>
-    <div class="header-logo-left">
-      <img src="image/logo.gif" alt="Logo links" class="logo" />
-    </div>
-    <div class="header-text">Woontrends Losser 2 </div>
-    <div class="header-logo-right">
-      <div class="hamburger" onclick="toggleMenu()">
-        <img src="image/logo-menu.gif" alt="Menu" class="hamburger-icon" />
-      </div>
-      <img src="image/logo.gif" alt="Logo rechts" class="logo" />
-    </div>
-  </header>
-
-  <nav>
-    <ul class="nav-menu" id="mobileMenu">
-      <li><a href="index.asp" class="active">Home</a></li>
-      <li><a href="over.asp">Over</a></li>
-      <li><a href="locaties.asp">Locaties</a></li>
-      <li><a href="producten.asp">Producten</a></li>
-      <li><a href="nieuwsbrief.asp">Nieuwsbrief</a></li>
-      <li><a href="contact.asp">Contact</a></li>
-    </ul>
-    <div class="nav-current-page" id="currentPageName">Home</div>
-  </nav>
-
-
-  <main>
-    <section class="retro-wrapper">
-      <img src="image/foto2.jpg" alt="Sfeervolle winkelinrichting met retro decoraties" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
-      <p class="intro"></p> 
-      <blockquote class="retro-quote">
-        "Een warm interieur begint bij een bezoek aan onze winkel!"
-      </blockquote>
-   </section>
+  <main class="retro-wrapper">
+    <h1>Contactformulier</h1>
+    <form class="retro-form">
+      <label>Naam: <input type="text" name="naam" required></label><br>
+      <label>Email: <input type="email" name="email" required></label><br>
+      <button type="submit">Verstuur</button>
+    </form>
   </main>
-
-  <footer>
-    &copy; 2025 Woontrends Losser, Alle rechten voorbehouden.  
-  </footer>
-
-  <script>
-
-  function adjustMainPadding() {
-     const header = document.querySelector('header');
-     const nav = document.querySelector('nav');
-     const main = document.querySelector('main');
-     if (header && nav && main) { /* voer dit uit als alle 3 selectors bestaan */
-        const totalHeight = header.offsetHeight + nav.offsetHeight + 30;
-        main.style.paddingTop = totalHeight + 'px';
-     }
-   }
-
-   window.addEventListener('load', adjustMainPadding);
-   window.addEventListener('resize', adjustMainPadding);
-
-  </script>
-
 </body>
 </html>
